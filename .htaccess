@@ -1,0 +1,22 @@
+<IfModule mod_rewrite.c>
+
+#Allowing Cross origin requests - Needed for AJAX
+Header always set Access-Control-Allow-Origin "*"
+
+#Allowing 'Authorization' header
+Header always set Access-Control-Allow-Headers: "Authorization"
+
+#Setting the environment variables - MySQL Connection parameters
+SetEnv HOST dummyhost
+SetEnv DB dummydbname
+SetEnv USER dummyusername
+SetEnv PASSWORD dummypassword
+
+#Redirecting /printer requests to CustomerService.php
+RewriteEngine on
+RewriteBase /printer
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ CustomerService.php?request=$1 [L,QSA,NC]
+
+</IfModule>
