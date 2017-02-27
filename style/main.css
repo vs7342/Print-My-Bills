@@ -1,0 +1,20 @@
+.page-header{
+	
+}
+
+.custom-btn{
+	margin-right:10px;
+}
+
+.search-customer .input-group{
+	float:left;
+}
+
+#btnAddCustomer{
+	float:right;
+}
+
+.singleItem{
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
