@@ -1,0 +1,73 @@
+<div id='item_uniqueItemId' class='singleItem form-group clearfix'>
+	<button type='button' class='btn btn-primary col-xs-2' data-toggle="modal" data-target="#itemModal_uniqueItemId">Item uniqueItemId Details</button>			
+	<div class='col-xs-2' id='itemSummary_nameQty_uniqueItemId'>&lt;-- Click to add item uniqueItemId details</div>
+	<div class='col-xs-2' id='itemSummary_amount_uniqueItemId' style="text-align: right;"></div>
+	<div class='custom-modal'>
+		<div class="modal fade" id="itemModal_uniqueItemId" tabindex="-1" role="dialog" aria-labelledby="lblItemModal_uniqueItemId" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+				
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						 <span aria-hidden="true">&times;</span>
+						</button>
+						<h4 class="modal-title" id="lblItemModal_uniqueItemId">Enter Item uniqueItemId Details</h4>
+					</div>
+					
+					<div class="modal-body">
+						
+							<div class='custom-form'>
+								
+								<div class="form-group row">
+									<label for="particulars" class="col-xs-2 col-form-label">Item Particulars</label>
+									<div class="col-xs-10">
+										<input type="text" id="particulars_uniqueItemId" name="particulars[]" class="form-control"/>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="package" class="col-xs-2 col-form-label">Package Description</label>
+									<div class="col-xs-10">
+										<input type="text" id="package_uniqueItemId" name="package[]" class="form-control"/>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="rate" class="col-xs-2 col-form-label">Rate</label>
+									<div class="col-xs-4">
+										<input type="number" step="0.001" min="0.001" id="rate_uniqueItemId" name="rate[]" value="1" onkeyup="calculateAmount(uniqueItemId);" class="form-control"/>
+									</div>
+									<label for="per" class="col-xs-2 col-form-label">Per</label>
+									<div class="col-xs-4">
+										<input type="number" step="0.001" min="0.001" id="per_uniqueItemId" name="per[]" value="1" onkeyup="calculateAmount(uniqueItemId);" class="form-control"/>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="quantity" class="col-xs-2 col-form-label">Quantity</label>
+									<div class="col-xs-4">	
+										<input type="number" step="0.001" min="0.001" id="quantity_uniqueItemId" name="quantity[]" value="1" onkeyup="calculateAmount(uniqueItemId);" class="form-control"/>
+									</div>
+									<label for="unit" class="col-xs-2 col-form-label">Unit</label>
+									<div class="col-xs-4">	
+										<input type="text" id="unit_uniqueItemId" name="unit[]" class="form-control"/>
+									</div>
+								</div>
+								<div class="form-group row">
+									<label for="amount" class="col-xs-2 col-form-label">Item Amount</label>
+									<div class="col-xs-4">	
+										<input type="text" id="amount_str_uniqueItemId" readonly class="form-control"/>
+										<input type="hidden" id="amount_uniqueItemId" name="amount[]"/>
+									</div>
+									<div class="col-xs-6">
+										<button type='button' class='btn btn-primary col-xs-12' onClick='saveItem(uniqueItemId)'>Save Item</button>
+									</div>
+								</div>
+
+							</div>
+						
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	
+</div><!--end of single item-->
