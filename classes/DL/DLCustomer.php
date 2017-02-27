@@ -17,6 +17,7 @@ class DLCustomer
 	private $addressline2;
 	private $city;
 	private $pincode;
+	private $pan;
 	
 	/*Constructor*/
 	function __construct(
@@ -27,7 +28,8 @@ class DLCustomer
 		$addressline1=null,
 		$addressline2=null,
 		$city=null,
-		$pincode=null
+		$pincode=null,
+		$pan=null
 	)
 	{
 		if($cid!==null)
@@ -46,6 +48,8 @@ class DLCustomer
 			$this->city=$city;
 		if($pincode!==null)
 			$this->pincode=$pincode;
+		if($pan!=null)
+			$this->pan=$pan;
 	}
 	
 	/*Getters and Setters*/
@@ -72,6 +76,9 @@ class DLCustomer
 	}
 	function getPincode(){
 		return $this->pincode;
+	}
+	function getPan(){
+		return $this->pan;
 	}
 	
 	function setCid($cid){
@@ -106,6 +113,10 @@ class DLCustomer
 		if($pincode!==null)
 			$this->pincode = $pincode;
 	}
+	function setPan($pan){
+		if($pan!=null)
+			$this->pan = $pan;
+	}
 	
 	/*Methods*/
 	
@@ -121,9 +132,9 @@ class DLCustomer
 		}
 		$query = "
 			INSERT INTO CUSTOMERS 
-			(VAT, CST, NAME, ADDRESSLINE1, ADDRESSLINE2, CITY, PINCODE)
+			(VAT, CST, NAME, ADDRESSLINE1, ADDRESSLINE2, CITY, PINCODE, PAN)
 			VALUES
-			(?,?,?,?,?,?,?)
+			(?,?,?,?,?,?,?,?)
 		";
 		$paramVals = array(
 			$this->getVat(),
@@ -132,10 +143,11 @@ class DLCustomer
 			$this->getAddressline1(),
 			$this->getAddressline2(),
 			$this->getCity(),
-			$this->getPincode()
+			$this->getPincode(),
+			$this->getPan()
 		);
 		$paramTypes = array(
-			'i','i','s','s','s','s','i'
+			'i','i','s','s','s','s','i','s'
 		);
 		
 		try{
@@ -231,6 +243,11 @@ class DLCustomer
 			$query .= "PINCODE = ?,";
 			array_push($paramVals, $this->getPincode());
 			array_push($paramTypes, 'i');
+		}
+		if($this->getPan()!=null){
+			$query .= "PAN = ?,";
+			array_push($paramVals, $this->getPan());
+			array_push($paramTypes, 's');
 		}
 		
 		$query = rtrim($query, ",");

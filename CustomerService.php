@@ -30,6 +30,11 @@ class CustomerService extends GenericRestService
 				{
 					$singleCustomer["name"]=$customer->getName();
 					$singleCustomer["cid"]=$customer->getCid();
+					$singleCustomer["vat"]=$customer->getVat();
+					$singleCustomer["cst"]=$customer->getCst();
+					$singleCustomer["city"]=$customer->getCity();
+					$singleCustomer["pincode"]=$customer->getPincode();
+					$singleCustomer["pan"]=$customer->getPan();
 					$customersArray[] = $singleCustomer;
 				}
 				return $customersArray;
@@ -55,6 +60,7 @@ class CustomerService extends GenericRestService
 					$singleCustomer["addressline2"]=$customer->getAddressline2();
 					$singleCustomer["city"]=$customer->getCity();
 					$singleCustomer["pincode"]=$customer->getPincode();
+					$singleCustomer["pan"]=$customer->getPan();
 					
 					return $singleCustomer;
 			}
@@ -76,7 +82,8 @@ class CustomerService extends GenericRestService
 				$args["addressline1"],
 				$args["addressline2"],
 				$args["city"],
-				$args["pincode"]
+				$args["pincode"],
+				$args["pan"]
 			);
 			if($customerObj->insert())
 			{
@@ -115,7 +122,8 @@ class CustomerService extends GenericRestService
 					$args["addressline1"],
 					$args["addressline2"],
 					$args["city"],
-					$args["pincode"]
+					$args["pincode"],
+					$args["pan"]
 				);
 				
 				if($customerObj->update()>0)
