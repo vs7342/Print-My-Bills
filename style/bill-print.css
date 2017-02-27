@@ -1,0 +1,112 @@
+#toPrint
+{
+	width: 700px;
+}
+#heading
+{
+	margin-bottom: 0px;
+	margin-top: 10px;
+}
+#subheading
+{
+	margin: 0px;
+	color: gray;
+}
+#address
+{
+	margin-top:0px;
+	margin-bottom: 8px;
+}
+#taxinvoice
+{
+	display: inline;
+	margin-top:8px;
+	margin-bottom: 0px;
+	border: 1px solid black;
+	border-bottom: none;
+}
+#billData table
+{
+    border-collapse: collapse;
+	width: 700px;
+}
+#billData td
+{
+    border: 1px solid black;
+	padding: 3px;
+	width: 350px;
+}
+#itemData table
+{
+	border-collapse: collapse;
+	width: 700px;
+	margin-bottom: 10px;
+}
+#itemData td,th
+{
+	border: 1px solid black;
+}
+#itemData tr td:nth-child(1n+4),
+#itemData tr td:nth-last-child(-n+3)
+{
+	text-align: right;
+}
+#itemData tr td:first-child
+{
+	text-align: left;
+}
+#forIndustrialUse
+{
+	border: solid 1px;
+	margin-left: 25px;
+	margin-right: 25px;
+}
+/*
+#vatCst
+{
+	font-size: 13px;
+	width: 350px;
+	float: left;
+	text-align: left;
+}*/
+#rb
+{
+	font-size: 15px;
+	width: 350px;
+	float: left;
+	text-align: left;
+}
+ol
+{
+	padding-left: 15px;
+	margin: 0px;
+}
+#terms
+{
+	font-size: 13px;
+	width: 55%;
+	float: left;
+	bottom: 0px;
+	text-align: left;
+	margin-top: 15px;
+}
+#declaration
+{
+	width: 248px;
+	font-size: 10px;
+	float: right;
+	text-align: justify;
+}
+#signature
+{
+	float: right;
+	bottom: 0px;
+	text-align: right;
+}
+#billLogo{
+	height: 78px;
+	float: left;
+	position: absolute;
+	left: 26px;
+	top: 26px;
+}
